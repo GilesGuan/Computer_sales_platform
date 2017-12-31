@@ -79,7 +79,10 @@ CREATE TABLE CHAT(
   chatRelease char(1)      NOT NULL,  --发起方
   chatTime    timestamp    NOT NULL,  --聊天时间
   chatContent varchar2(200)NOT NULL,  --聊天内容
-  CONSTRAINT ChatPK PRIMARY KEY (chatUserNo,chatShopNo,chatRelease,chatTime)
+  CONSTRAINT ChatPK PRIMARY KEY (chatUserNo,chatShopNo,chatRelease,chatTime),
+  CONSTRAINT ChatFK_user FOREIGN KEY (chatUserNo) REFERENCES MYUSER(userNo),
+  CONSTRAINT ChatFK_shop FOREIGN KEY (chatShopNo) REFERENCES SHOP(shopNo),
+  CONSTRAINT ChatCK_STATE CHECK (chatRelease='U' or chatRelease='S')
 );
 
 CREATE TABLE EVALUATE(
