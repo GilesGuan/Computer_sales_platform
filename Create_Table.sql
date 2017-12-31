@@ -126,11 +126,9 @@ CREATE TABLE TROLLEY(
   trolleyShopNo     char(8)   NOT NULL,  --商店编号
   trolleyPcNo       char(8)   NOT NULL,  --商品编号
   trolleyPcQuantity number(6) NOT NULL,  --购买数量
-  trolleyOrderNo    char(10)  NOT NULL,  --订单号
   CONSTRAINT TroPK PRIMARY KEY (trolleyNo),
   CONSTRAINT TroFK_USER FOREIGN KEY (userNo) REFERENCES MYUSER(userNo),
   CONSTRAINT TroFK_PC   FOREIGN KEY (trolleyShopNo,trolleyPcNo) REFERENCES STOCK(stockShopNo, stockPcNo),
-  CONSTRAINT TroFK_ORDER FOREIGN key (trolleyOrderNo) REFERENCES MYORDER(orderNo),
   CONSTRAINT TroCK_QUANTT CHECK (trolleyPcQuantity>0)
 );
 

@@ -135,11 +135,11 @@ values('11012004','10012004',to_timestamp('2017-2-22 13:29:20','yyyy-mm-dd hh24:
 commit;
 
 
-insert into TROLLEY(trolleyNo, userNo, trolleyShopNo, trolleyPcNo, trolleyPcQuantity, trolleyOrderNo)
-values('09012003','15012004','14012003','13012003',2,'11012004');
+insert into TROLLEY(trolleyNo, userNo, trolleyShopNo, trolleyPcNo, trolleyPcQuantity)
+values('09012003','15012004','14012003','13012003',2);
 
-insert into TROLLEY(trolleyNo, userNo, trolleyShopNo, trolleyPcNo, trolleyPcQuantity, trolleyOrderNo)
-values('09012004','15012004','14012003','13012006',1,'11012003');
+insert into TROLLEY(trolleyNo, userNo, trolleyShopNo, trolleyPcNo, trolleyPcQuantity)
+values('09012004','15012004','14012003','13012006',1);
 
 commit;
 
