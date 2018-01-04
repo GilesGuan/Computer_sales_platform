@@ -100,6 +100,9 @@ CREATE TABLE EVALUATE(
 CREATE TABLE MYORDER(
   orderNo             char(10)      NOT NULL,  --订单号
   orderUserNo         char(8)       NOT NULL,  --下单用户编号
+  orderShopNo     char(8)   NOT NULL,  --商店编号
+  orderPcNo       char(8)   NOT NULL,  --购买商品
+  orderPcQuantity     number(6)   NOT NULL,  --购买数量     
   orderTime           timestamp     NOT NULL,  --下单时间
   orderReceiveName    varchar2(12)  NOT NULL,  --收货人姓名
   orderReceivePhone   char(11)      NOT NULL,  --收货人电话
@@ -109,6 +112,8 @@ CREATE TABLE MYORDER(
   orderState          varchar2(10)  NOT NULL,  --订单状态
   CONSTRAINT OrderPK PRIMARY KEY (orderNo),
   CONSTRAINT OrderFK FOREIGN KEY (orderUserNo) REFERENCES MYUSER(userNo),
+  CONSTRAINT OrderFK_SHOP   FOREIGN KEY (orderShopNo) REFERENCES SHOP(shopNo),
+  CONSTRAINT OrderFK_PC   FOREIGN KEY (orderPcNo) REFERENCES SUPPLY(supplyNo),
   CONSTRAINT OrderCK_PAY CHECK (orderPayMethod='online' or orderPayMethod='cash'),
   CONSTRAINT OrderCK_STATE CHECK (orderState='SendBack' or orderState='Delivering' or orderState='Finished')
 );

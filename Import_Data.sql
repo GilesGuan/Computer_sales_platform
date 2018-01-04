@@ -114,14 +114,14 @@ values('15012003','13012006','14012006',to_timestamp('2017-12-21 17:49:20','yyyy
 commit;
 
 
-insert into MYORDER (orderNo,orderUserNo,orderTime,orderReceiveName,orderReceivePhone,orderReceiveAddress,orderReceiveZipCode,orderPayMethod,orderState)
-values ('11012003','15012004',to_timestamp('2017-12-21 17:49:20','yyyy-mm-dd hh24:mi:ss'),'霍恩海姆','18923457861','亚美斯特里斯','100084','online','Delivering');
+insert into MYORDER (orderNo,orderUserNo, orderShopNo, orderPcNo, orderPcQuantity,orderTime,orderReceiveName,orderReceivePhone,orderReceiveAddress,orderReceiveZipCode,orderPayMethod,orderState)
+values ('11012003','15012004','14012003', '13012004',2,to_timestamp('2017-12-21 17:49:20','yyyy-mm-dd hh24:mi:ss'),'霍恩海姆','18923457861','亚美斯特里斯','100084','online','Delivering');
 
-insert into MYORDER (orderNo,orderUserNo,orderTime,orderReceiveName,orderReceivePhone,orderReceiveAddress,orderReceiveZipCode,orderPayMethod,orderState)
-values('11012004','15012006',to_timestamp('2017-2-21 17:49:20','yyyy-mm-dd hh24:mi:ss'),'温蒂','18923457851','布里克兹','100089','cash','Finished');
+insert into MYORDER (orderNo,orderUserNo,orderShopNo, orderPcNo, orderPcQuantity,orderTime,orderReceiveName,orderReceivePhone,orderReceiveAddress,orderReceiveZipCode,orderPayMethod,orderState)
+values('11012004','15012006','14012004', '13012005',3,to_timestamp('2017-2-21 17:49:20','yyyy-mm-dd hh24:mi:ss'),'温蒂','18923457851','布里克兹','100089','cash','Finished');
 
-insert into MYORDER (orderNo,orderUserNo,orderTime,orderReceiveName,orderReceivePhone,orderReceiveAddress,orderReceiveZipCode,orderPayMethod,orderState)
-values('11012005','15012002',to_timestamp('2017-12-01 17:49:20','yyyy-mm-dd hh24:mi:ss'),'斯洛斯','18923427851','布里克兹','100089','cash','SendBack');
+insert into MYORDER (orderNo,orderUserNo,orderShopNo, orderPcNo, orderPcQuantity,orderTime,orderReceiveName,orderReceivePhone,orderReceiveAddress,orderReceiveZipCode,orderPayMethod,orderState)
+values('11012005','15012002','14012005', '13012003',1,to_timestamp('2017-12-01 17:49:20','yyyy-mm-dd hh24:mi:ss'),'斯洛斯','18923427851','布里克兹','100089','cash','SendBack');
 
 commit;
 
