@@ -118,16 +118,6 @@ CREATE TABLE MYORDER(
   CONSTRAINT OrderCK_STATE CHECK (orderState='SendBack' or orderState='Delivering' or orderState='Finished')
 );
 
-CREATE TABLE SHIP(
-  orderNo    char(10)  NOT NULL,  --订单编号
-  shipNo     char(8)   NOT NULL,  --配送单编号
-  shipDate   timestamp NOT NULL,  --配送单下单时间
-  shipState  char(1)   NOT NULL,  --配送状态
-  CONSTRAINT ShipPK PRIMARY KEY (shipNo),
-  CONSTRAINT ShipFK FOREIGN KEY (orderNo) REFERENCES MYORDER(orderNo),
-  CONSTRAINT ShipCK CHECK (shipState='0' or shipState='1')
-);
-
 CREATE TABLE TROLLEY(
   trolleyNo         char(10)  NOT NULL,  --购物车项目编号
   userNo            char(8)   NOT NULL,  --用户编号
