@@ -125,16 +125,6 @@ values('11012005','15012002','14012005', '13012003',1,to_timestamp('2017-12-01 1
 
 commit;
 
-
-insert into SHIP (orderNo, shipNo, shipDate, shipState)
-values('11012003','10012003',to_timestamp('2017-12-22 07:39:10','yyyy-mm-dd hh24:mi:ss'), '0');
-
-insert into SHIP (orderNo, shipNo, shipDate, shipState)
-values('11012004','10012004',to_timestamp('2017-2-22 13:29:20','yyyy-mm-dd hh24:mi:ss'), '1');
-
-commit;
-
-
 insert into TROLLEY(trolleyNo, userNo, trolleyShopNo, trolleyPcNo, trolleyPcQuantity)
 values('09012003','15012004','14012003','13012003',2);
 
